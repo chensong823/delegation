@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.List;
 
-public class MyStack<E> extends ArrayList<E> {
+public class MyStack<E> {
 
     private ArrayList<E> delegate;
     public MyStack(){
-        this.delegate = new ArrayList<>();
+        delegate = new ArrayList<>();
     }
 
 
@@ -23,6 +23,11 @@ public class MyStack<E> extends ArrayList<E> {
         if (isEmpty()) throw new EmptyStackException();
         return delegate.remove(delegate.size() - 1);
     }
+
+    private boolean isEmpty() {
+        return delegate.isEmpty();
+    }
+
 
 //    public E pop() {
 //        if (isEmpty()) throw new EmptyStackException();
