@@ -2,12 +2,27 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.EmptyStackException;
+import java.util.List;
 
 public class MyStack<E> extends ArrayList<E> {
 
+    private ArrayList<E> delegate;
+    public MyStack(){
+        this.delegate = new ArrayList<>();
+    }
+
+
+//    public void push(E e) {
+//        delegate.add(e);
+//    }
     public void push(E e) {
         add(e);
     }
+
+//    public E pop() {
+//        if (isEmpty()) throw new EmptyStackException();
+//        return delegate.remove(delegate.size() - 1);
+//    }
 
     public E pop() {
         if (isEmpty()) throw new EmptyStackException();
